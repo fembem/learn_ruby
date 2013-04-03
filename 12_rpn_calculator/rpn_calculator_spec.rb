@@ -33,7 +33,7 @@
 # * <http://en.wikipedia.org/wiki/Reverse_Polish_notation>
 # * <http://www.calculator.org/rpn.aspx>
 #
-require "rpn_calculator"
+require_relative "rpn_calculator"
 
 describe RPNCalculator do
 
@@ -95,6 +95,8 @@ describe RPNCalculator do
     calculator.push(3)
     calculator.times
     calculator.value.should == (1+2)*3
+
+    calculator.empty
 
     # 1 2 3 * + => 1 + (2 * 3)
     calculator.push(1)
